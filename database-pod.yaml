@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: database-test
+spec:
+  nodeSelector:
+    workload: database
+
+  tolerations:
+    - key: "dedicated"
+      operator: "Equal"
+      value: "database"
+      effect: "NoSchedule"
+
+  containers:
+    - name: postgres
+      image: postgres:16-alpine
+      env:
+        - name: POSTGRES_PASSWORD
+          value: testpass

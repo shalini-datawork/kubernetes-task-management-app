@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local / backup files
+*.backup
+*.bak
+*.tmp
+
+# Kubernetes secrets
+backend-secret.yaml
+postgres-secret.yaml
+*-secret.yaml
+!backend-secret.example.yaml
+!postgres-secret.example.yaml
+
+# Local Helm credentials
+task-app/secrets.local.yaml
+
+# Temporary Kubernetes lab files
+postgres-policy-backup.yaml
+postgres-restrictive.yaml
+rendered.yaml
+
+# Environment files
+.env
+.env.*
+
+# Helm downloaded dependencies
+task-app/charts/*.tgz
